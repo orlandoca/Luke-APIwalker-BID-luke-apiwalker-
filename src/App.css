@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App {
+  padding: 20px;
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.select-search {
+  margin-left: 40px;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.id-search {
+  text-align: center;
+  font-size: 50px;
+  margin-left: 45px;
+}
+
+button {
+  margin: 30px;
+  background-color: gray;
+  color: white;
+  width: 120px;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 30px;
+  justify-content: baseline;
+}
+
+select {
+  background-color: midnightblue;
+  margin: 30px;
+  margin-left: 3px;
+  width: 120px;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+}
+
+input {
+  width: 70px;
+  margin: 15px;
+}
+
+img {
+  width: 400px;
+  height: 250px;
+  margin-top: 35px;
+  margin-left: 65px;
+  padding: 5px;
+}
