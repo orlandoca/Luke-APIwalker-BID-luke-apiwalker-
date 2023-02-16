@@ -1,13 +1,17 @@
 import React from "react";
 
 export default function Cards({ data, props }) {
-  const item = props.split("/").slice(4, 5)[0]; //
-  console.log(data.detail);
+  const item = props.split("/").slice(4, 5)[0];
+  //console.log(data.detail);
+  console.log(item);
 
-  if (!data || data.detail === "Not found") {
-    <div>
-      <h1>No se encontro el recurso</h1>
-    </div>;
+  if (!data || data.err != undefined) {
+    return (
+      <div>
+        <h1>Estos no son los droides que está buscando</h1>
+        <img src="https://images.alphacoders.com/124/1244083.jpg" />
+      </div>
+    );
   } else {
     switch (item) {
       case "people":
@@ -74,14 +78,6 @@ export default function Cards({ data, props }) {
               <li>{data.manufacturer}</li>
               <li>{data.length}</li>
             </ul>
-          </div>
-        );
-
-      default:
-        return (
-          <div>
-            <h1>Estos no son los droides que está buscando</h1>
-            <img src="https://images.alphacoders.com/124/1244083.jpg" />
           </div>
         );
     }

@@ -8,12 +8,13 @@ function App() {
   const [categorias, setCategorias] = useState([]);
   const [controllerCat, setControllercat] = useState("");
   const [controllerId, setControllerid] = useState("");
-  const [saveData, setsaveData] = useState({});
+  const [saveData, setsaveData] = useState(null);
 
   useEffect(() => {
     axios
       .get("https://swapi.dev/api/")
       .then((res) => setCategorias(Object.entries(res.data)));
+
   }, []);
 
   function buscar() {
@@ -21,7 +22,8 @@ function App() {
     axios
       .get(`${controllerCat}${controllerId}`)
       //.get("https://swapi.dev/api/" ${ controllerCat + controllerId)
-      .then((res) => setsaveData(res.data));
+      .then((res) => setsaveData(res.data))
+      .catch(err => setsaveData({err: err.message}))
   }
   return (
     <div className="App">
@@ -50,7 +52,7 @@ function App() {
         </div>
       </section>
       <div>
-        {saveData == {} ? " " : <Cards data={saveData} props={controllerCat} />}
+        {saveData &&  <Cards data={saveData} props={controllerCat} />}
       </div>
     </div>
   );
